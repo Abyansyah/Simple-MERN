@@ -36,6 +36,7 @@ const UserList = () => {
               <th>Name</th>
               <th>Email</th>
               <th>Gender</th>
+              <th>Age</th>
               <th>Actions</th>
             </tr>
           </thead>
@@ -46,6 +47,7 @@ const UserList = () => {
                 <td>{user.name}</td>
                 <td>{user.email}</td>
                 <td>{user.gender}</td>
+                <td>{user.age}</td>
                 <td>
                   <Link to={`edit/${user._id}`} className="button is-info is-small">
                     Edit

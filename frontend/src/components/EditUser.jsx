@@ -6,6 +6,7 @@ const EditUser = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [gender, setGender] = useState('Male');
+  const [age, setAge] = useState('');
   const navigate = useNavigate();
   const { id } = useParams();
 
@@ -20,6 +21,7 @@ const EditUser = () => {
     setName(response.data.name);
     setEmail(response.data.email);
     setGender(response.data.gender);
+    setAge(response.data.age);
   };
 
   const updateUser = async (e) => {
@@ -29,6 +31,7 @@ const EditUser = () => {
         name,
         email,
         gender,
+        age
       });
       navigate('/');
     } catch (error) {
@@ -61,6 +64,12 @@ const EditUser = () => {
                   <option value="Female">Female</option>
                 </select>
               </div>
+            </div>
+          </div>
+          <div className="field">
+            <label className="label">Age</label>
+            <div className="control">
+              <input type="text" value={age} onChange={(e) => setAge(e.target.value)} className="input" placeholder="Age" />
             </div>
           </div>
           <div className="field">

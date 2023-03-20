@@ -13,6 +13,10 @@ const User = mongoose.Schema({
     type: String,
     required: true,
   },
+  age: {
+    type: String,
+    required: true,
+  },
 });
 
 export default mongoose.model('Users', User);

@@ -6,6 +6,7 @@ const AddUser = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [gender, setGender] = useState('Male');
+  const [age, setAge] = useState('');
   const navigate = useNavigate();
 
   const saveUser = async (e) => {
@@ -15,6 +16,7 @@ const AddUser = () => {
         name,
         email,
         gender,
+        age,
       });
       navigate('/');
     } catch (error) {
@@ -47,6 +49,12 @@ const AddUser = () => {
                   <option value="Female">Female</option>
                 </select>
               </div>
+            </div>
+          </div>
+          <div className="field">
+            <label className="label">Age</label>
+            <div className="control">
+              <input type="text" value={age} onChange={(e) => setAge(e.target.value)} className="input" placeholder="Age" />
             </div>
           </div>
           <div className="field">
